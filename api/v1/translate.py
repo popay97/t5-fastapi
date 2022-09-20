@@ -1,7 +1,8 @@
-from transformers import T5Tokenizer, T5ForConditionalGeneration
+from transformers import T5ForConditionalGeneration, T5Tokenizer
 
 tokenizer = T5Tokenizer.from_pretrained("t5-base")
 model = T5ForConditionalGeneration.from_pretrained("t5-base")
+
 
 async def translate(text, source, target):
     input_text = f"Translate {source} to {target}: {text}"
