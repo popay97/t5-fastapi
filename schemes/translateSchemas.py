@@ -1,13 +1,17 @@
 from pydantic import BaseModel
-from core.config import supportedLanguages 
+
+from core.config import supportedLanguages
+
 
 class TranslateRequest(BaseModel):
     text: str
     source: str
     target: str
 
+
 class TranslateResponse(BaseModel):
     translatedText: str
+
 
 def translateRequestValidator(request: TranslateRequest):
     if request.source == request.target:
